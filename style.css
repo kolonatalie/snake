@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=VT323&display=swap');
+
+:root {
+  --clr-primary: rgb(82, 115, 65);
+  --clr-secondary: rgb(171, 201, 52);
+  --clr-links: rgb(210, 250, 14);
+  --clr-white: rgb(222, 226, 240);
+  --clr-black: #111419;
+  --clr-bg: rgb(63, 73, 95);
+  --clr-dark-grey: color-mix(in srgb, var(--clr-bg), white 10%);
+
+  --ff-primary: 'VT323', 'Courier New', Courier, monospace;
+  --ff-secondary: "Shadows Into Light", cursive;
+  --ff-sans-serif: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  --radius: 0.25rem;
+  --transition: all 0.3s linear;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  background-color: var(--clr-bg);
+  color: var(--clr-black);
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.3rem;
+  width: 100%;
+}
+
+.nav-header h2 {
+  visibility: hidden;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-secondary);
+  line-height: 0.5rem;
+  letter-spacing: -0.09rem;
+  margin-bottom: 0.75rem;
+  color: var(--clr-black);
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 1px 0 var(--clr-black);
+}
+
+h2 {
+  font-size: 2rem;
+  text-shadow: 1px 1px 0 var(--clr-black);
+}
+
+.nav-toggle {
+  font-size: 1.9rem;
+  color: var(--clr-white);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+  padding-right: 1.5rem;
+  margin-top: 0.85rem;
+}
+
+.nav-toggle:hover {
+  color: var(--clr-links);
+}
+
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  list-style: none;
+  text-align: left;
+  background: var(--clr-secondary);
+  font-size: 1.5rem;
+  box-shadow: 0 40px 40px rgba(0, 0, 0, 0.6);
+}
+
+.links li {
+  margin: 1.5rem 0;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--clr-black);
+  transition: var(--transition);
+}
+
+.links a:hover {
+  cursor: pointer;
+  color: var(--clr-white);
+}
+
+.smartphone p {
+  color: var(--clr-dark-grey);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: none;
+  font-family: var(--ff-sans-serif);
+  margin-top: 10rem;
+}
+
+.smartphone h2 {
+  margin-bottom: 2rem;
+}
+
+.social {
+  display: flex;
+  justify-content: start;
+  list-style: none;
+  padding: 0;
+}
+
+.social li {
+  margin: 0 2rem 0 0;
+}
+
+.social-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor; /* makes them follow link color */
+  vertical-align: top;
+  transition: transform 0.2s ease;
+}
+
+.social a:hover .social-icon {
+  transform: scale(1.2);
+}
+
+.show-links {
+  height: 50vh;
+}
+ul.links {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 800px) {
+  nav {
+    max-width: 1200px;
+    width: 90vw;
+  }
+
+  .nav-center {
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-header h2 {
+    visibility: visible;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin: 2.5rem 0;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--clr-white);
+    text-shadow: 1px 1px 0 var(--clr-white);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    background: transparent;
+    font-size: 1.2rem;
+    box-shadow: none;
+    transition: none;
+  }
+
+  .links li {
+    margin: 0.5rem 0 0.5rem 2rem;
+  }
+
+  .links a {
+    padding: 0;
+    color: var(--clr-white);
+    transition: none;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+    color: var(--clr-links);
+    transition: color 0.3s ease, background 0.3s;
+  }
+
+  .smartphone {
+    display: none;
+  }
+}
+
+footer {
+  display: none;
+}
+
+@media screen and (min-height: 750px) {
+  main {
+    max-width: 320px;
+    height: 90vh;
+    max-height: 680px;
+    border-radius: 6rem 6rem 25% 25%;
+    box-shadow:
+      inset 0 0.05rem 0.1rem 0 rgba(0, 0, 0, 0.7),
+      inset 0 1rem 0.6rem 0.2rem rgba(255, 255, 255, 0.15),
+      inset 0 -0.1rem 0.2rem 0 rgba(255, 255, 255, 0.1),
+      inset 0 -0.6rem 0.6rem 0 rgba(0, 0, 0, 0.4),
+      0 3rem 4rem var(--clr-black);
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  footer p {
+    color: var(--clr-white);
+    font-size: 0.9rem;
+    font-weight: 100;
+    line-height: 0.5rem;
+    text-transform: none;
+    font-family: var(--ff-sans-serif);
+  }
+
+  footer a {
+    text-decoration: none;
+    color: var(--clr-links);
+    transition: var(--transition);
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 90vw;
+}
+
+.game-board {
+  text-align: center;
+  max-width: 330px;
+  position: relative;
+  background: var(--clr-secondary);
+  padding: 0 1rem 1rem;
+  border-radius: 0.6rem;
+  box-shadow:
+    0 0 0.1rem 0.07rem hsla(0, 0%, 100%, 0.3),
+    0 0.2rem 0.8rem 0 hsla(0, 0%, 100%, 0.5),
+    0 0 5rem 0 hsla(218, 19%, 8%, 0.4),
+    inset 0 0 0.1rem 0.07rem hsla(0, 0%, 0%, 0.5),
+    inset 0 0 1rem 0.5rem hsla(0, 0%, 0%, 0.5);
+}
+
+.game-wrapper {
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  color: var(--clr-black);
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 260px;
+  height: 260px;
+  background-color: var(--clr-secondary);
+  border: 3px solid var(--clr-black);
+}
+
+.grid div {
+  border-radius: 2px;
+}
+
+.status-message {
+  position: absolute;
+  top: 51.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 87%;
+  padding: 5.1rem 0;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  background: var(--clr-secondary);
+}
+
+.instructions {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-black);
+  width: 60%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.snake {
+  background-color: var(--clr-black);
+  border: 1px dotted var(--clr-secondary);
+}
+
+.apple {
+  border: 2px solid var(--clr-black);
+}
+
+.head {
+  background-color: var(--clr-dark-grey);
+}
+
+.controls {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    ". up ."
+    "left restart right"
+    ". down .";
+  gap: 0.75rem;
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+}
+
+.start {
+  background-color: var(--clr-secondary);
+  color: var(--clr-black);
+  padding: 1rem;
+  height: 75%;
+  font-family: var(--ff-primary);
+  font-size: 1.5rem;
+  line-height: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+  box-shadow:
+    0 0 0.7rem 0 rgba(0, 0, 0, 0.7),
+    inset 0 -0.1rem 0.1rem 0.07rem rgba(173, 206, 144, 0.6),
+    inset 0 0 1rem 0 rgba(255, 255, 255, 1),
+    inset -0.3rem -0.5rem 0.9rem 0 rgba(35, 80, 13, 0.8);
+}
+
+.start:active {
+  transform: scale(0.9);
+}
+
+.control-btn {
+  background-color: var(--clr-white);
+  border: none;
+  color: var(--clr-black);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  box-shadow:
+    0 0.02rem 0 0.05rem rgba(0, 0, 0, 0.7),
+    0 0 0.7rem 0 rgba(0, 0, 0, 0.7),
+    inset 0 -0.1rem 0.1rem 0.07rem rgba(255, 255, 255, 0.6),
+    inset 0 0 1rem 0 rgba(255, 255, 255, 1),
+    inset -0.3rem -0.5rem 0.9rem 0 rgba(46, 47, 67, 0.8);
+  transition: transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.control-btn:active {
+  transform: scale(0.9);
+}
+
+#up-btn {
+  grid-area: up;
+}
+
+#left-btn {
+  grid-area: left;
+}
+
+#right-btn {
+  grid-area: right;
+}
+
+#down-btn {
+  grid-area: down;
+}
+
+#restart-btn {
+  grid-area: restart;
+}
+
+.spin-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor; /* makes it inherit text color */
+}
